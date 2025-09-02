@@ -8,6 +8,7 @@ const elRules = document.getElementById("rules");
 const elResult = document.getElementById("result");
 const elModal = document.getElementById("modal");
 const elCloseModal = document.getElementById("closeModal");
+const elScore = document.getElementById("score");
 
 export {
   elGameZone,
@@ -20,4 +21,5 @@ export {
   elResult,
   elModal,
   elCloseModal,
+  elScore,
 };

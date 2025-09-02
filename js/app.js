@@ -39,3 +39,6 @@ elRules.addEventListener("click", () => {
 elCloseModal.addEventListener("click", () => {
   elModal.classList.add("hidden");
 });
+
+if () {
+}
