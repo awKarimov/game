@@ -8,10 +8,12 @@ import {
   elRules,
   elCloseModal,
   elModal,
+  elModeChangerBtn,
+  elModeWrapper,
 } from "./html-elements.js";
 import { refreshGame } from "./refresh-game.js";
 import { switchZone } from "./switch-zone.js";
-import { mode } from "./mode.js";
+import { mode, modeChanger } from "./mode.js";
 import { checkWinner } from "./check-winner.js";
 
 elHands.forEach((hand) => {
@@ -30,6 +32,16 @@ elHands.forEach((hand) => {
   });
 });
 
+elModeChangerBtn.addEventListener("click", (evt) => {
+  if (mode === "easy") {
+    modeChanger("hard");
+  } else {
+    modeChanger("easy");
+  }
+});
+
+console.log(elModeWrapper.dataset);
+
 elRefreshGame.addEventListener("click", refreshGame);
 
 elRules.addEventListener("click", () => {
@@ -39,6 +51,3 @@ elRules.addEventListener("click", () => {
 elCloseModal.addEventListener("click", () => {
   elModal.classList.add("hidden");
 });
-
-if () {
-}

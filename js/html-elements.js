@@ -9,6 +9,8 @@ const elResult = document.getElementById("result");
 const elModal = document.getElementById("modal");
 const elCloseModal = document.getElementById("closeModal");
 const elScore = document.getElementById("score");
+const elModeChangerBtn = document.getElementById("mode-changer-btn");
+const elModeWrapper = document.getElementById("modeWrapper");
 
 export {
   elGameZone,
@@ -22,4 +24,6 @@ export {
   elModal,
   elCloseModal,
   elScore,
+  elModeChangerBtn,
+  elModeWrapper,
 };
