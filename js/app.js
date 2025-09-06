@@ -10,6 +10,8 @@ import {
   elModal,
   elModeChangerBtn,
   elModeWrapper,
+  rulesImg,
+  hardRulesImg,
 } from "./html-elements.js";
 import { refreshGame } from "./refresh-game.js";
 import { switchZone } from "./switch-zone.js";
@@ -35,8 +37,14 @@ elHands.forEach((hand) => {
 elModeChangerBtn.addEventListener("click", (evt) => {
   if (mode === "easy") {
     modeChanger("hard");
+    elModeWrapper.style.backgroundImage = "url('./images/polygon.svg')";
+    rulesImg.classList.add("hidden");
+    hardRulesImg.classList.remove("hidden");
   } else {
     modeChanger("easy");
+    elModeWrapper.style.backgroundImage = "url('./images/path.svg')";
+    hardRulesImg.classList.add("hidden");
+    rulesImg.classList.remove("hidden");
   }
 });
 

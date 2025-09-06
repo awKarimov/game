@@ -1,23 +1,38 @@
 import { aiChoose } from "./ai-choose.js";
 import { paper, rock, scissors, spock, lizard } from "./constant.js";
+import { elScore } from "./html-elements.js";
 import { mode } from "./mode.js";
 
+let score = 0;
+
 export function checkWinner(ai, player) {
+  let result;
+
   if (ai === player) {
-    return "draw";
+    result = "draw";
   } else if (ai === paper && player === rock) {
-    return "You lose";
+    result = "You lose";
   } else if (ai === rock && player === scissors) {
-    return "You lose";
+    result = "You lose";
   } else if (ai === scissors && player === paper) {
-    return "You lose";
+    result = "You lose";
   } else if (ai === spock && player === rock) {
-    return "You lose";
+    result = "You lose";
   } else if (ai === lizard && player === paper) {
-    return "You lose";
+    result = "You lose";
   } else if (ai === spock && player === lizard) {
-    return "You lose";
+    result = "You lose";
   } else {
-    return "You win";
+    result = "You win";
   }
+
+  if (result === "You win") {
+    score++;
+  } else if (result === "You lose" && score > 0) {
+    score--;
+  }
+
+  elScore.textContent = score;
+
+  return result;
 }

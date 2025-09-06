@@ -11,6 +11,8 @@ const elCloseModal = document.getElementById("closeModal");
 const elScore = document.getElementById("score");
 const elModeChangerBtn = document.getElementById("mode-changer-btn");
 const elModeWrapper = document.getElementById("modeWrapper");
+const rulesImg = document.querySelector(".rules-img");
+const hardRulesImg = document.querySelector(".hard-rules-img");
 
 export {
   elGameZone,
@@ -26,4 +28,6 @@ export {
   elScore,
   elModeChangerBtn,
   elModeWrapper,
+  rulesImg,
+  hardRulesImg,
 };

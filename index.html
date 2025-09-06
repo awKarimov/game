@@ -16,7 +16,7 @@
   <body class="bg-[#131537] max-w-[1440px] font-[Barlow_Semi_Condensed]">
     <header>
       <div
-        class="flex mt-8 ml-[403px] mb-16 border-[2px] border-[#FFFFFF4A] rounded-2xl w-[700px] h-[150px] items-center justify-between">
+        class="flex mt-8 ml-[403px] mb-26 border-[2px] border-[#FFFFFF4A] rounded-2xl w-[700px] h-[150px] items-center justify-between">
         <img
           class="block w-[305px] h-[182.3px] pt-7 pb-7 pl-8"
           src="./images/logo.svg"
@@ -24,10 +24,10 @@
         <div
           class="bg-white w-[150px] h-[114px] rounded-2xl inline-block justify-center mr-10">
           <p
-            class="text-[#2A45C2] text-2xl tracking-[2.5px] font-[Barlow_Semi_Condensed] font-semibold mt-4 ml">
+            class="text-[#2A45C2] text-2xl tracking-[2.5px] font-[Barlow_Semi_Condensed] font-semibold mt-4 ml flex justify-center">
             SCORE
           </p>
-          <p id="score">0</p>
+          <p id="score" class="flex justify-center text-5xl font-bold">0</p>
         </div>
       </div>
     </header>
@@ -36,26 +36,40 @@
       <section id="gameZone" class="flex justify-center">
         <div
           id="modeWrapper"
-          class="relative w-[480px] h-[480px] bg-no-repeat bg-center bg-contain group"
+          class="relative w-[490px] h-[470px] bg-no-repeat bg-center bg-contain group"
           data-mode="easy"
           style="background-image: url('./images/path.svg')">
-          <button class="hand absolute top-[-30px] left-[-25px]">
-            <img src="./images/paper.svg" alt="paper" class="w-60" />
-          </button>
+          <div class="hidden data-[mode=hard]:block">
+            <style>
+              #modeWrapper[data-mode="hard"] {
+                background-image: url("./images/polygon.svg");
+              }
+            </style>
+          </div>
+          <img
+            src="./images/paper.svg"
+            alt="paper"
+            class="w-55 absolute top-[-45px] left-[-25px] transition-opacity duration-300 group-hover:opacity-100" />
 
-          <button class="hand absolute top-[-30px] right-[-28px]">
-            <img src="./images/scissors.svg" alt="scissors" class="w-60" />
-          </button>
+          <img
+            src="./images/scissors.svg"
+            alt="scissors"
+            class="hand w-55 absolute top-[-45px] right-[-21px]" />
 
-          <button class="hand absolute bottom-0 left-1/2 -translate-x-1/2">
-            <img src="./images/rock.svg" alt="rock" class="w-60" />
-          </button>
-          <button class="hand hidden group-data-[mode=hard]:block">
-            <img src="./images/spock.svg" alt="spock" class="w-60" />
-          </button>
-          <button class="hand hidden group-data-[mode=hard]:block">
-            <img src="./images/lizard.svg" alt="lizard" class="w-60" />
-          </button>
+          <img
+            src="./images/rock.svg"
+            alt="rock"
+            class="hand w-55 absolute top-82 left-58 -translate-x-1/2" />
+
+          <img
+            src="./images/spock.svg"
+            alt="spock"
+            class="hand absolute hidden-btn w-55 hidden group-data-[mode=hard]:block top-48 left-[-81px]" />
+
+          <img
+            src="./images/lizard.svg"
+            alt="lizard"
+            class="hand absolute hidden-btn w-58 hidden group-data-[mode=hard]:block right-[-90px] top-50" />
         </div>
       </section>
       <!-- Process Zone -->
@@ -91,6 +105,11 @@
         class="flex justify-self-end mr-12 px-6 py-2 border-2 text-white rounded hover:bg-white hover:text-black">
         Rules
       </button>
+      <button
+        id="mode-changer-btn"
+        class="flex justify-self-end px-6 py-2 border-2 text-white rounded hover:bg-white hover:text-black">
+        hard
+      </button>
     </div>
     <div
       class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6"
@@ -102,19 +121,17 @@
           class="flex justify-self-end mb-3"
           id="closeModal"
           src="./images/x.svg"
-          alt="" />
-        <img class="" src="./images/rules.svg" alt="" />
+          alt="Close Modal" />
+        <img
+          class="rules-img w-120"
+          src="./images/rules.svg"
+          alt="easy mode Rules" />
+        <img
+          class="hard-rules-img hidden w-110"
+          src="./images/hard-mode-rules.svg "
+          alt="Hard Mode Rules" />
       </div>
     </div>
-
-    <!-- FIVE HAND MODE -->
-    <button
-      id="mode-changer-btn"
-      class="flex justify-self-end px-6 py-2 border-2 text-white rounded hover:bg-white hover:text-black">
-      hard
-    </button>
-
-    <!-- Modal -->
 
     <script src="./js/app.js" type="module"></script>
   </body>
