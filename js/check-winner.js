@@ -2,6 +2,7 @@ import { aiChoose } from "./ai-choose.js";
 import { paper, rock, scissors, spock, lizard } from "./constant.js";
 import { elScore } from "./html-elements.js";
 import { mode } from "./mode.js";
+import { channel5 } from "./synchronize.js";
 
 let score = 0;
 
@@ -28,8 +29,10 @@ export function checkWinner(ai, player) {
 
   if (result === "You win") {
     score++;
+    channel5.postMessage("win");
   } else if (result === "You lose" && score > 0) {
     score--;
+    channel5.postMessage("lose");
   }
 
   elScore.textContent = score;
